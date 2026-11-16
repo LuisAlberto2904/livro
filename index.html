@@ -1,0 +1,217 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Luis Alberto, escritor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+/* Layout: hero em duas colunas (texto + capa), depois faixas de largura total que alternam fundo escuro e fundo de barro. */
+:root {
+  --bg: #1b120b;        /* umbra profunda, tirada do fundo da capa */
+  --bg-2: #25180e;      /* faixa alternada */
+  --fg: #f3e6d3;        /* texto principal */
+  --muted: #c4ad92;     /* texto secundário */
+  --accent: #e0a458;    /* âmbar do barro iluminado */
+  --accent-ink: #1b120b;
+  --line: #4a3321;
+  --font-display: "Fira Sans Extra Condensed", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 19px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1080px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-display); font-style: italic; font-weight: 800; line-height: 1.02; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(3rem, 9vw, 5.6rem); }
+h2 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); margin-bottom: 20px; }
+p { margin: 0 0 1em; max-width: 62ch; }
+a { color: inherit; }
+.eyebrow { font-family: var(--font-display); font-style: italic; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-size: 1.05rem; margin-bottom: 14px; }
+
+/* Faixas de largura total: o fundo alterna, o conteúdo fica centralizado */
+.band { margin-left: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); margin-right: calc(-1 * max(16px, env(safe-area-inset-right, 0px))); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band.alt { background: var(--bg-2); border-block: 1px solid var(--line); }
+section.band { padding-block: 72px; }
+
+/* Topo */
+.top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 22px; }
+.brand { font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 1.5rem; letter-spacing: .02em; text-decoration: none; }
+.top a.ig { color: var(--muted); text-decoration: none; font-size: .95rem; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.top a.ig:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; align-items: center; padding-block: 36px 84px; }
+.hero .sub { font-size: 1.3rem; color: var(--muted); margin-top: 22px; font-style: italic; }
+.hero .cover { justify-self: center; width: min(100%, 380px); }
+.hero .cover img { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: 0 30px 60px -18px #000, 0 0 0 1px #00000055; transform: rotate(1.5deg); }
+.buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-align: center; min-height: 54px; padding: 12px 28px; font-family: var(--font-display); font-style: italic; font-weight: 800; font-size: 1.35rem; letter-spacing: .03em; text-decoration: none; border-radius: 3px; border: 2px solid var(--accent); transition: transform .15s ease, background .15s ease; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { transform: translateY(-2px); background: #efb96c; }
+.btn.ghost { color: var(--accent); background: transparent; }
+.btn.ghost:hover { transform: translateY(-2px); background: #e0a45822; }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+.fineprint { color: var(--muted); font-size: .9rem; margin-top: 14px; }
+
+/* Citação */
+.quote { text-align: left; }
+.quote blockquote { margin: 0; font-size: clamp(1.5rem, 3.6vw, 2.2rem); line-height: 1.35; font-style: italic; max-width: 26ch; }
+.quote cite { display: block; margin-top: 18px; font-style: normal; font-family: var(--font-display); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); font-size: 1rem; }
+
+/* Sumário */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.toc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.toc li { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.toc .n { font-family: var(--font-display); font-style: italic; font-weight: 800; color: var(--accent); font-size: 1.4rem; }
+.toc .pg { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: .92rem; margin-top: 26px; }
+
+/* Capítulo grátis */
+.free { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; }
+.free .box { border: 2px solid var(--accent); border-radius: 3px; padding: 28px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.free .box strong { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; font-weight: 800; }
+.free .box span { color: var(--muted); font-size: .95rem; }
+
+/* Autor */
+.author { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: center; }
+.author img { display: block; width: 100%; height: auto; border-radius: 3px; box-shadow: 0 24px 50px -20px #000; }
+.links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+
+/* Rodapé */
+.final { text-align: left; }
+.final h2 { max-width: 16ch; }
+footer { padding-block: 34px 44px; color: var(--muted); font-size: .88rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+
+@media (max-width: 820px) {
+  body { font-size: 18px; }
+  .hero, .split, .author, .free { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .hero .cover { order: -1; width: min(100%, 300px); }
+  section.band { padding-block: 52px; }
+  .btn { width: 100%; }
+  .free .box { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } .hero .cover img { transform: none; } }
+</style>
+
+<div class="band">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#inicio">Luis Alberto</a>
+      <a class="ig" href="https://www.instagram.com/luisalberto.escritor/" target="_blank" rel="noopener">@luisalberto.escritor</a>
+    </div>
+
+    <header class="hero" id="inicio">
+      <div>
+        <div class="eyebrow">Devocionais · 1ª edição</div>
+        <h1>Vasos fracos nas mãos de um Deus forte</h1>
+        <p class="sub">Devocionais para quem precisa ser reconstruído na roda do Oleiro.</p>
+        <div class="buttons">
+          <a class="btn primary" href="https://go.hotmart.com/E108495926A">Comprar o livro</a>
+          <a class="btn ghost" href="https://luisalberto2904.kpages.online/captura" target="_blank" rel="noopener">Ler capítulo grátis</a>
+        </div>
+        <p class="fineprint">O capítulo grátis traz a Introdução e o capítulo 1, em PDF + UM PRESENTE SURPRESA.</p>
+      </div>
+      <div class="cover">
+        <img src="capa.jpg" alt="Capa do livro Vasos fracos nas mãos de um Deus forte, com as mãos de um oleiro moldando um vaso rachado na roda" width="900" height="1353">
+      </div>
+    </header>
+  </div>
+</div>
+
+<section class="band alt quote">
+  <div class="wrap">
+    <blockquote>Ele não junta os cacos numa pá e joga fora.</blockquote>
+    <cite>Do capítulo 7, “Sorria, Deus está te vendo”</cite>
+  </div>
+</section>
+
+<section class="band" id="livro">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Sobre o livro</div>
+      <h2>Uma visita à casa do oleiro</h2>
+      <p>Em Jeremias 18, Deus manda o profeta descer à casa de um oleiro. Lá, um vaso se quebra nas mãos do artesão, que junta o barro e faz outro vaso.</p>
+      <p>Este livro acompanha essa cena ao lado de Maria Madalena, Pedro, os discípulos de Emaús, a mulher apanhada em adultério, a samaritana e José do Egito. Cada capítulo fala de ouvir a voz de Deus, de descer, de esperar e de confiar quando o vaso rachou.</p>
+      <p>É um livro para ler aos poucos, com a Bíblia aberta, e para quem hoje só enxerga cacos no espelho.</p>
+      <div class="facts">
+        <span>80 páginas</span><span>Roseira, SP · 2025</span><span>ISBN 978-65-01-59274-9</span>
+      </div>
+    </div>
+    <ol class="toc" aria-label="Capítulos">
+      <li><span class="n">1</span><span>Por falar de vasos</span><span class="pg">p. 13</span></li>
+      <li><span class="n">2</span><span>Abra bem os teus ouvidos</span><span class="pg">p. 19</span></li>
+      <li><span class="n">3</span><span>Ouvindo a voz de Deus em meio ao caos</span><span class="pg">p. 25</span></li>
+      <li><span class="n">4</span><span>Se prepare para descer</span><span class="pg">p. 35</span></li>
+      <li><span class="n">5</span><span>Acidentes pelo caminho… quando o vaso se quebra</span><span class="pg">p. 49</span></li>
+      <li><span class="n">6</span><span>Tempo de reconstrução</span><span class="pg">p. 59</span></li>
+      <li><span class="n">7</span><span>Sorria, Deus está te vendo</span><span class="pg">p. 65</span></li>
+      <li><span class="n">8</span><span>Deus escreve certo por linhas certas</span><span class="pg">p. 71</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band alt" id="gratis">
+  <div class="wrap free">
+    <div>
+      <div class="eyebrow">Leia antes de decidir</div>
+      <h2>Capítulo grátis</h2>
+      <p>Comece pela Introdução, com a história do menino que acreditava que a bota vermelha era de aço, e siga até o fim do capítulo 1, “Por falar de vasos”.</p>
+    </div>
+    <div class="box">
+      <strong>Introdução + capítulo 1</strong>
+      <span>PDF · cerca de 10 páginas</span>
+      <span>Clicando AGORA ganha um PRESENTE ESPECIAL</span>
+      <a class="btn primary" style="margin-top:14px" href="https://luisalberto2904.kpages.online/captura" target="_blank" rel="noopener">Abrir o capítulo grátis</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="autor">
+  <div class="wrap author">
+    <img src="autor.jpg" alt="Luis Alberto sorrindo, sentado em uma poltrona com uma Bíblia aberta no colo" width="1400" height="765">
+    <div>
+      <div class="eyebrow">O autor</div>
+      <h2>Luis Alberto dos Santos Silva</h2>
+      <p>Professor, administrador, casado com Patrícia e pai de Luís Otávio e Lucas Alberto. Serve a Jesus com alegria e singeleza de coração.</p>
+      <p>Escreveu este livro depois de passar pela roda do Oleiro, com os espinhos nos pés e os braços quebrados que a vida entrega a todo mundo. Na infância vestia capa de Super-Homem. Hoje sabe de que barro é feito.</p>
+      <div class="links">
+        <a class="btn ghost" href="https://www.instagram.com/luisalberto.escritor/" target="_blank" rel="noopener">Seguir no Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt final" id="comprar">
+  <div class="wrap">
+    <div class="eyebrow">Receba o livro</div>
+    <h2>Leve o livro para a sua casa</h2>
+    <p>Peça o seu exemplar de <em>Vasos fracos nas mãos de um Deus forte</em> e comece a leitura ainda esta semana.</p>
+    <p> <img src="" alt=""></p>
+    <div class="buttons">
+      <a class="btn primary" id="buy" href="https://go.hotmart.com/E108495926A" target="_blank" rel="noopener">Comprar o livro</a>
+      <a class="btn ghost" href="https://luisalberto2904.kpages.online/captura" target="_blank" rel="noopener">Ler capítulo grátis</a>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <footer>
+      <span>© 2025 Luis Alberto dos Santos Silva</span>
+      <a href="https://www.instagram.com/luisalberto.escritor/" target="_blank" rel="noopener">@luisalberto.escritor</a>
+    </footer>
+  </div>
+</div>
+
+<script>
+/* Quando houver link da loja, troque o endereço abaixo. Os dois botões "Comprar o livro" usam este valor. */
+var BUY_URL = "https://go.hotmart.com/E108495926A";
+document.querySelectorAll('a[href="#comprar"], #buy').forEach(function (a) {
+  if (a.id === "buy") { a.href = BUY_URL; }
+});
+</script>
+
+</body></html>
